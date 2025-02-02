@@ -1,4 +1,4 @@
-name=otp
+name=machocat
 dest=/usr/bin
 cc=gcc
 flags=-Wall -Werror -Wextra -O3 -ffast-math
