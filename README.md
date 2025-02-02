@@ -4,7 +4,7 @@
 
 MachoCat is a highly secure one-time pad (OTP) encryption system designed for private communication. MachoCat ensures that even with quantum computing advancements, messages remain completely unbreakable—so long as the keys remain secret.
 
-With MachoCat, two parties can securely sync large amounts of cryptographic keys via physical means (e.g., USB sticks) and then communicate online using a rolling OTP system, ensuring forward secrecy and resistance against statistical analysis attacks.
+With MachoCat, two parties can securely sync large amounts of cryptographic keys via physical means (e.g., USB sticks, serial connection) and then communicate online using a rolling OTP system, ensuring forward secrecy and resistance against statistical analysis attacks.
 
 ## How It Works
 
