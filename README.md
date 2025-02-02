@@ -56,6 +56,7 @@ MachoCat follows a strict OTP encryption scheme:
 - Implement Diffie-Hellman key exchange over UART for ad-hoc secure key sharing.
 - Enhance automated key management for seamless operation.
 - Introduce error correction for noisy channels in UART communications.
+- Network Chat Implementation (Planned): MachoCat will include a network chat feature that allows users to communicate securely over the internet using pre-shared OTP keys.
 
 ## Contributions
 
