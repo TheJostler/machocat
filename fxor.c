@@ -32,16 +32,10 @@ char xor(char a, char b) {
   return a ^ b;
 }
 
-int fxor(char *input, char *key, char *output) {
-  int inputfd = openf(input, O_RDWR | O_SYNC, 0);
-  int keyfd = openf(key, O_RDWR | O_SYNC, 0);
-  int outputfd = openf(output, O_WRONLY | O_CREAT | O_TRUNC, 0666);
+int fdxor(int inputfd, int keyfd, int outputfd) {
   int i = 0;
   off_t input_size = lseek(inputfd, 0, SEEK_END);
   lseek(inputfd, 0, SEEK_SET);
-
-  printf("Processing... %s\n", input);
-
 
   char input_buffer[BUFFER_SIZE];
   char key_buffer[BUFFER_SIZE];
@@ -80,9 +74,6 @@ int fxor(char *input, char *key, char *output) {
   fill(inputfd, input_size, 0x00);
   fill(keyfd, input_size, 0x00);
 
-  unlink(input);
-  unlink(key);
-
   //Clear buffers
   memset(input_buffer, 0, BUFFER_SIZE);
   memset(key_buffer, 0, BUFFER_SIZE);
@@ -92,5 +83,19 @@ int fxor(char *input, char *key, char *output) {
   close(inputfd);
   close(keyfd);
   close(outputfd);
+  return 0;
+}
+
+int fxor(char *input, char *key, char *output) {
+  int inputfd = openf(input, O_RDWR | O_SYNC, 0);
+  int keyfd = openf(key, O_RDWR | O_SYNC, 0);
+  int outputfd = openf(output, O_WRONLY | O_CREAT | O_TRUNC, 0666);
+  
+  printf("Processing... %s\n", input);
+  fdxor(inputfd, keyfd, outputfd);
+
+  unlink(input);
+  unlink(key);
+
   return 0;
 }
