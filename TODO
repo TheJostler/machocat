@@ -4,3 +4,6 @@
  - [] The device must be air-gapped before continuing. Disable all IP and Bluetooth interfaces
  - [] Change the user and permissions of the serial device so no other users can access it.
  - [] Encrypt the key transfer using kyber
+
+[] Implement a sync protocol and a key exchange mechanism
+[] Explore the possibility of flashing new firmware on the USB sticks so that they will not install as storage devices unless given a magic value by the machocat process. Machocat must handle the mounting of these drives.
