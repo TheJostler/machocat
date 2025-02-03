@@ -1,0 +1,6 @@
+[] Create a simple usb-serial P2P poc.
+ - [] Must implement monitoring to ensure only we have access to the serial connection. If another process gets access, abort!
+ - [] Must open with O_EXCL to lock out anyone else
+ - [] The device must be air-gapped before continuing. Disable all IP and Bluetooth interfaces
+ - [] Change the user and permissions of the serial device so no other users can access it.
+ - [] Encrypt the key transfer using kyber
